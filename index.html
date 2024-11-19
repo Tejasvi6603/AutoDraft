@@ -1,0 +1,603 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f4; }
+            .navbar { background-color: #774aa4; padding: 10px; text-align: center; margin: -20px; height: 34px; }
+            .navbar-item { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; font-size: 21px; }
+            .navbar-item:hover { text-decoration: underline; }
+            .send-email-button { background-color: green; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer; font-size: 0.9em; margin-top: -5px; float: right; }
+            .sessions-container { display: flex; flex-wrap: wrap; justify-content: center; margin-top: 56px; }
+            .session-card { background-color: #ffffff; border: 1px solid #e2e2e2; border-radius: 8px; padding: 15px; margin: 10px; width: 300px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); transition: transform 0.2s; cursor: pointer; }
+            .session-card:hover { transform: scale(1.05); }
+            .session-title { font-size: 1.5em; margin: 0; color: #101010; }
+            .session-description { margin: 5px 0; color: #19191a; }
+            .session-tags { margin-top: 10px; }
+            .intro-cards-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        .intro-card {
+            background-color: #c99bf6; /* Violet color */
+            border: 1px solid #e2e2e2;
+            border-radius: 8px;
+            padding: 5rem;
+            margin: 1.5rem;
+            width: 28rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+            cursor: pointer;
+            text-align: center;
+            color: black;
+        }
+        .intro-card:hover {
+            transform: scale(1.05); /* Hover effect */
+            background-color: #b834ec; /* Darker violet on hover */
+        }
+        .intro-card h3 {
+            font-size: 2.0em;
+            margin-bottom: 10px;
+        }
+        .intro-card p {
+            font-size: 1.3em;
+        }
+            .tag { background-color: #e0e7ff; border-radius: 5px; padding: 5px; margin-right: 5px; display: inline-block; font-size: 0.9em; color: #774aa4; margin-top: 10px; }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar">
+            <a href="#" class="navbar-item">Home</a>
+            <a href="#" class="navbar-item">Sessions</a>
+            <a href="https://www.datadoghq.com/about/leadership/" class="navbar-item">About</a>
+            <a href="#" class="navbar-item">Contact</a>
+            <button class="send-email-button" onclick="openEmlFile()">Send Email</button>
+        </nav>
+
+         <div class="intro-cards-container">
+        <div class="intro-card">
+            <h3>Foundation Enablement</h3>
+            <p>Sessions available on this platform.</p>
+        </div>
+        <div class="intro-card">
+            <h3>Training Sessions</h3>
+            <p>Planned on a monthly basis.</p>
+        </div>
+        <div class="intro-card">
+            <h3>View the Session Calendar</h3>
+            <p>Check out the available sessions and plan ahead.</p>
+        </div>
+        <div class="intro-card">
+            <h3>You Can Select:</h3>
+            <p>Topics, Level, Language</p>
+        </div>
+    </div>
+
+        <div class="sessions-container">
+            
+            <div class="session-card" onclick="window.location.href='https://www.datadoghq.com/technical-enablement/session/using-rum-to-track-core-web-vitals/'">
+                <h2 class="session-title">Workshop: Using Datadog RUM to Track Core Web Vitals</h2>
+                <p class="session-description">An interactive workshop through Datadog Real User Monitoring (RUM).</p>
+                <div class="session-tags">
+                    
+                    <span class="tag">ENGLISH</span>
+                    
+                    <span class="tag">INTERMEDIATE</span>
+                    
+                    <span class="tag">RUM</span>
+                    
+                    <span class="tag">DEVELOPER</span>
+                    
+                </div>
+            </div>
+            
+            <div class="session-card" onclick="window.location.href='https://www.datadoghq.com/technical-enablement/session/apm-monitors-and-alerting/'">
+                <h2 class="session-title">Workshop: APM Monitors and Alerting</h2>
+                <p class="session-description">An interactive workshop deep diving into APM Monitors and Alerting</p>
+                <div class="session-tags">
+                    
+                    <span class="tag">ENGLISH</span>
+                    
+                    <span class="tag">INTERMEDIATE</span>
+                    
+                    <span class="tag">APM</span>
+                    
+                    <span class="tag">DEVELOPER</span>
+                    
+                </div>
+            </div>
+            
+            <div class="session-card" onclick="window.location.href='https://www.datadoghq.com/technical-enablement/session/create-business-critical-insights-using-dashboards-and-slos-workshop/'">
+                <h2 class="session-title">Workshop: Create Business-Critical Insights Using Dashboards and SLOs</h2>
+                <p class="session-description">An interactive workshop to learn techniques for creating an executive Dashboard to track busine...</p>
+                <div class="session-tags">
+                    
+                    <span class="tag">ENGLISH</span>
+                    
+                    <span class="tag">INTERMEDIATE</span>
+                    
+                    <span class="tag">DASHBOARDING</span>
+                    
+                    <span class="tag">DEVOPS</span>
+                    
+                </div>
+            </div>
+            
+            <div class="session-card" onclick="window.location.href='https://www.datadoghq.com/technical-enablement/session/getting-started-with-logs-explorer/'">
+                <h2 class="session-title">Workshop: Getting Started with Log Explorer</h2>
+                <p class="session-description">An interative workshop to introduce you into the Log Explorer.</p>
+                <div class="session-tags">
+                    
+                    <span class="tag">ENGLISH</span>
+                    
+                    <span class="tag">BEGINNER</span>
+                    
+                    <span class="tag">LOGS</span>
+                    
+                    <span class="tag">DEVOPS</span>
+                    
+                </div>
+            </div>
+            
+            <div class="session-card" onclick="window.location.href='https://www.datadoghq.com/technical-enablement/session/usecase-poweruser/'">
+                <h2 class="session-title">Become a Datadog Power User</h2>
+                <p class="session-description">A deep dive into how to become a Datadog Power User with the help of cross-product features</p>
+                <div class="session-tags">
+                    
+                    <span class="tag">ENGLISH</span>
+                    
+                    <span class="tag">INTERMEDIATE</span>
+                    
+                    <span class="tag">USAGE</span>
+                    
+                    <span class="tag">DEVOPS</span>
+                    
+                </div>
+            </div>
+            
+            <div class="session-card" onclick="window.location.href='https://www.datadoghq.com/technical-enablement/session/usecase-datarationality/'">
+                <h2 class="session-title">Datadog Usage and Data rationality</h2>
+                <p class="session-description">A deep dive into understanding the Data rationality and the Datadog usage</p>
+                <div class="session-tags">
+                    
+                    <span class="tag">ENGLISH</span>
+                    
+                    <span class="tag">INTERMEDIATE</span>
+                    
+                    <span class="tag">USAGE</span>
+                    
+                    <span class="tag">DEVOPS</span>
+                    
+                </div>
+            </div>
+            
+            <div class="session-card" onclick="window.location.href='https://www.datadoghq.com/technical-enablement/session/troubleshooting-with-datadog/'">
+                <h2 class="session-title">Troubleshooting with Datadog</h2>
+                <p class="session-description">Deep dive into the incident response setup using dashboards, monitors, and explorers to ensure ...</p>
+                <div class="session-tags">
+                    
+                    <span class="tag">ENGLISH</span>
+                    
+                    <span class="tag">INTERMEDIATE</span>
+                    
+                    <span class="tag">USAGE</span>
+                    
+                    <span class="tag">DEVOPS</span>
+                    
+                </div>
+            </div>
+            
+            <div class="session-card" onclick="window.location.href='https://www.datadoghq.com/technical-enablement/session/tagging/'">
+                <h2 class="session-title">Tagging</h2>
+                <p class="session-description">An introduction to how a proper tagging strategy can improve observability</p>
+                <div class="session-tags">
+                    
+                    <span class="tag">ENGLISH</span>
+                    
+                    <span class="tag">BEGINNER</span>
+                    
+                    <span class="tag">TAGGING</span>
+                    
+                    <span class="tag">DEVOPS</span>
+                    
+                </div>
+            </div>
+            
+            <div class="session-card" onclick="window.location.href='https://www.datadoghq.com/technical-enablement/session/synthetics/'">
+                <h2 class="session-title">Introduction to Synthetics</h2>
+                <p class="session-description">An introduction to how Synthetic testing can observe how your systems and applications are perf...</p>
+                <div class="session-tags">
+                    
+                    <span class="tag">ENGLISH</span>
+                    
+                    <span class="tag">BEGINNER</span>
+                    
+                    <span class="tag">SYNTHETICS</span>
+                    
+                    <span class="tag">DEVOPS</span>
+                    
+                </div>
+            </div>
+            
+            <div class="session-card" onclick="window.location.href='https://www.datadoghq.com/technical-enablement/session/serverless/'">
+                <h2 class="session-title">AWS Serverless Monitoring</h2>
+                <p class="session-description">An introduction to how AWS Serverless monitoring provides full visibility into all of the manag...</p>
+                <div class="session-tags">
+                    
+                    <span class="tag">ENGLISH</span>
+                    
+                    <span class="tag">BEGINNER</span>
+                    
+                    <span class="tag">SERVERLESS</span>
+                    
+                    <span class="tag">DEVOPS</span>
+                    
+                </div>
+            </div>
+            
+            <div class="session-card" onclick="window.location.href='https://www.datadoghq.com/technical-enablement/session/rum-and-session-replay/'">
+                <h2 class="session-title">Introduction to Real User Monitoring</h2>
+                <p class="session-description">An introduction to how Real User Monitoring can provide insights into end user behavior</p>
+                <div class="session-tags">
+                    
+                    <span class="tag">ENGLISH</span>
+                    
+                    <span class="tag">BEGINNER</span>
+                    
+                    <span class="tag">RUM</span>
+                    
+                    <span class="tag">DEVELOPER</span>
+                    
+                </div>
+            </div>
+            
+            <div class="session-card" onclick="window.location.href='https://www.datadoghq.com/technical-enablement/session/rum-and-session-replay-intermediate/'">
+                <h2 class="session-title">Intermediate Real User Monitoring</h2>
+                <p class="session-description">A deep dive into Real User Monitoring</p>
+                <div class="session-tags">
+                    
+                    <span class="tag">ENGLISH</span>
+                    
+                    <span class="tag">INTERMEDIATE</span>
+                    
+                    <span class="tag">RUM</span>
+                    
+                    <span class="tag">DEVELOPER</span>
+                    
+                </div>
+            </div>
+            
+            <div class="session-card" onclick="window.location.href='https://www.datadoghq.com/technical-enablement/session/profiling/'">
+                <h2 class="session-title">Continuous Profiler</h2>
+                <p class="session-description">A deep dive into Continuous Profiler</p>
+                <div class="session-tags">
+                    
+                    <span class="tag">ENGLISH</span>
+                    
+                    <span class="tag">INTERMEDIATE</span>
+                    
+                    <span class="tag">APM</span>
+                    
+                    <span class="tag">DEVOPS</span>
+                    
+                </div>
+            </div>
+            
+            <div class="session-card" onclick="window.location.href='https://www.datadoghq.com/technical-enablement/session/network-performance-monitoring/'">
+                <h2 class="session-title">Network Performance Monitoring</h2>
+                <p class="session-description">An introduction to Network Performance Monitoring and Network Device Monitoring</p>
+                <div class="session-tags">
+                    
+                    <span class="tag">ENGLISH</span>
+                    
+                    <span class="tag">BEGINNER</span>
+                    
+                    <span class="tag">NPM</span>
+                    
+                    <span class="tag">DEVOPS</span>
+                    
+                </div>
+            </div>
+            
+            <div class="session-card" onclick="window.location.href='https://www.datadoghq.com/technical-enablement/session/monitoring-and-slos/'">
+                <h2 class="session-title">Monitoring and SLOs</h2>
+                <p class="session-description">An introduction to configuring actionable monitors and Service Level Objectives</p>
+                <div class="session-tags">
+                    
+                    <span class="tag">ENGLISH</span>
+                    
+                    <span class="tag">BEGINNER</span>
+                    
+                    <span class="tag">MONITORS</span>
+                    
+                    <span class="tag">DEVOPS</span>
+                    
+                </div>
+            </div>
+            
+            <div class="session-card" onclick="window.location.href='https://www.datadoghq.com/technical-enablement/session/log-management/'">
+                <h2 class="session-title">Log Management</h2>
+                <p class="session-description">An introduction to creating an effective logging strategy</p>
+                <div class="session-tags">
+                    
+                    <span class="tag">ENGLISH</span>
+                    
+                    <span class="tag">BEGINNER</span>
+                    
+                    <span class="tag">LOGS</span>
+                    
+                    <span class="tag">DEVOPS</span>
+                    
+                </div>
+            </div>
+            
+            <div class="session-card" onclick="window.location.href='https://www.datadoghq.com/technical-enablement/session/log-management-intermediate/'">
+                <h2 class="session-title">Intermediate Log Management</h2>
+                <p class="session-description">A deep dive into parsing and processing logs</p>
+                <div class="session-tags">
+                    
+                    <span class="tag">ENGLISH</span>
+                    
+                    <span class="tag">INTERMEDIATE</span>
+                    
+                    <span class="tag">LOGS</span>
+                    
+                    <span class="tag">DEVOPS</span>
+                    
+                </div>
+            </div>
+            
+            <div class="session-card" onclick="window.location.href='https://www.datadoghq.com/technical-enablement/session/kubernetes/'">
+                <h2 class="session-title">Introduction to Kubernetes Monitoring</h2>
+                <p class="session-description">An introduction to monitoring Kubernetes to understand the health of your clusters</p>
+                <div class="session-tags">
+                    
+                    <span class="tag">ENGLISH</span>
+                    
+                    <span class="tag">BEGINNER</span>
+                    
+                    <span class="tag">KUBERNETES</span>
+                    
+                    <span class="tag">DEVOPS</span>
+                    
+                </div>
+            </div>
+            
+            <div class="session-card" onclick="window.location.href='https://www.datadoghq.com/technical-enablement/session/infrastructure/'">
+                <h2 class="session-title">Infrastructure Monitoring</h2>
+                <p class="session-description">An introduction to monitoring the health and performance of servers, containers, and third part...</p>
+                <div class="session-tags">
+                    
+                    <span class="tag">ENGLISH</span>
+                    
+                    <span class="tag">BEGINNER</span>
+                    
+                    <span class="tag">INFRASTRUCTURE MONITORING</span>
+                    
+                    <span class="tag">DEVOPS</span>
+                    
+                </div>
+            </div>
+            
+            <div class="session-card" onclick="window.location.href='https://www.datadoghq.com/technical-enablement/session/incident-management/'">
+                <h2 class="session-title">Incident Management</h2>
+                <p class="session-description">An introduction to creating and tracking incidents within Datadog</p>
+                <div class="session-tags">
+                    
+                    <span class="tag">ENGLISH</span>
+                    
+                    <span class="tag">BEGINNER</span>
+                    
+                    <span class="tag">INCIDENTS</span>
+                    
+                    <span class="tag">DEVOPS</span>
+                    
+                </div>
+            </div>
+            
+            <div class="session-card" onclick="window.location.href='https://www.datadoghq.com/technical-enablement/session/datadog-overview/'">
+                <h2 class="session-title">Datadog Overview</h2>
+                <p class="session-description">An overview of how the Datadog unified platform makes your applications and infrastructure enti...</p>
+                <div class="session-tags">
+                    
+                    <span class="tag">ENGLISH</span>
+                    
+                    <span class="tag">BEGINNER</span>
+                    
+                    <span class="tag">FOUNDATION</span>
+                    
+                    <span class="tag">DEVOPS</span>
+                    
+                </div>
+            </div>
+            
+            <div class="session-card" onclick="window.location.href='https://www.datadoghq.com/technical-enablement/session/database-monitoring/'">
+                <h2 class="session-title">Database Monitoring</h2>
+                <p class="session-description">An introduction to how Database Monitoring provides insight to the health and performance of yo...</p>
+                <div class="session-tags">
+                    
+                    <span class="tag">ENGLISH</span>
+                    
+                    <span class="tag">BEGINNER</span>
+                    
+                    <span class="tag">DATABASE</span>
+                    
+                    <span class="tag">DEVOPS</span>
+                    
+                </div>
+            </div>
+            
+            <div class="session-card" onclick="window.location.href='https://www.datadoghq.com/technical-enablement/session/dashboarding/'">
+                <h2 class="session-title">Dashboarding</h2>
+                <p class="session-description">An introduction to building scalable dashboards</p>
+                <div class="session-tags">
+                    
+                    <span class="tag">ENGLISH</span>
+                    
+                    <span class="tag">BEGINNER</span>
+                    
+                    <span class="tag">DASHBOARDING</span>
+                    
+                    <span class="tag">DEVOPS</span>
+                    
+                </div>
+            </div>
+            
+            <div class="session-card" onclick="window.location.href='https://www.datadoghq.com/technical-enablement/session/dash-recap/'">
+                <h2 class="session-title">DASH Recap</h2>
+                <p class="session-description">A technical deep-dive into a variety of new features and enhancements announced at this year's ...</p>
+                <div class="session-tags">
+                    
+                    <span class="tag">ENGLISH</span>
+                    
+                    <span class="tag">BEGINNER</span>
+                    
+                    <span class="tag">NEW FEATURES</span>
+                    
+                    <span class="tag">DEVOPS</span>
+                    
+                </div>
+            </div>
+            
+            <div class="session-card" onclick="window.location.href='https://www.datadoghq.com/technical-enablement/session/custom-metrics/'">
+                <h2 class="session-title">Custom Metrics</h2>
+                <p class="session-description">An introduction to creating and visualizing custom metrics</p>
+                <div class="session-tags">
+                    
+                    <span class="tag">ENGLISH</span>
+                    
+                    <span class="tag">INTERMEDIATE</span>
+                    
+                    <span class="tag">METRICS</span>
+                    
+                    <span class="tag">DEVOPS</span>
+                    
+                </div>
+            </div>
+            
+            <div class="session-card" onclick="window.location.href='https://www.datadoghq.com/technical-enablement/session/cloud-siem/'">
+                <h2 class="session-title">Introduction to Cloud SIEM</h2>
+                <p class="session-description">An introduction to Cloud Security Incident and Event Management</p>
+                <div class="session-tags">
+                    
+                    <span class="tag">ENGLISH</span>
+                    
+                    <span class="tag">INTERMEDIATE</span>
+                    
+                    <span class="tag">SECURITY</span>
+                    
+                    <span class="tag">DEVOPS</span>
+                    
+                </div>
+            </div>
+            
+            <div class="session-card" onclick="window.location.href='https://www.datadoghq.com/technical-enablement/session/cloud-security-managment/'">
+                <h2 class="session-title">Introduction to Cloud Security Management</h2>
+                <p class="session-description">An introduction to how CSM deliver real-time threat detection and continuous configuration audi...</p>
+                <div class="session-tags">
+                    
+                    <span class="tag">ENGLISH</span>
+                    
+                    <span class="tag">INTERMEDIATE</span>
+                    
+                    <span class="tag">SECURITY</span>
+                    
+                    <span class="tag">DEVOPS</span>
+                    
+                </div>
+            </div>
+            
+            <div class="session-card" onclick="window.location.href='https://www.datadoghq.com/technical-enablement/session/cloud-cost-management/'">
+                <h2 class="session-title">Introduction to Cloud Cost Management</h2>
+                <p class="session-description">An introduction to how Cloud Cost Management can help you discover usage and cost optimization ...</p>
+                <div class="session-tags">
+                    
+                    <span class="tag">ENGLISH</span>
+                    
+                    <span class="tag">BEGINNER</span>
+                    
+                    <span class="tag">CLOUD COST MANAGEMENT</span>
+                    
+                    <span class="tag">DEVELOPER</span>
+                    
+                </div>
+            </div>
+            
+            <div class="session-card" onclick="window.location.href='https://www.datadoghq.com/technical-enablement/session/ci-visibility/'">
+                <h2 class="session-title">Introduction to CI Visibility</h2>
+                <p class="session-description">An introduction to CI Visibility</p>
+                <div class="session-tags">
+                    
+                    <span class="tag">ENGLISH</span>
+                    
+                    <span class="tag">BEGINNER</span>
+                    
+                    <span class="tag">CI</span>
+                    
+                    <span class="tag">DEVELOPER</span>
+                    
+                </div>
+            </div>
+            
+            <div class="session-card" onclick="window.location.href='https://www.datadoghq.com/technical-enablement/session/application-security-management/'">
+                <h2 class="session-title">Introduction to Application Security Management</h2>
+                <p class="session-description">An introduction to how ASM can detect and protect against threats in your application environme...</p>
+                <div class="session-tags">
+                    
+                    <span class="tag">ENGLISH</span>
+                    
+                    <span class="tag">INTERMEDIATE</span>
+                    
+                    <span class="tag">SECURITY</span>
+                    
+                    <span class="tag">DEVELOPER</span>
+                    
+                </div>
+            </div>
+            
+            <div class="session-card" onclick="window.location.href='https://www.datadoghq.com/technical-enablement/session/apm/'">
+                <h2 class="session-title">Introduction to APM</h2>
+                <p class="session-description">An introduction to Application Performance Monitoring</p>
+                <div class="session-tags">
+                    
+                    <span class="tag">ENGLISH</span>
+                    
+                    <span class="tag">BEGINNER</span>
+                    
+                    <span class="tag">APM</span>
+                    
+                    <span class="tag">DEVELOPER</span>
+                    
+                </div>
+            </div>
+            
+            <div class="session-card" onclick="window.location.href='https://www.datadoghq.com/technical-enablement/session/apm-intermediate/'">
+                <h2 class="session-title">Intermediate APM</h2>
+                <p class="session-description">A deep dive into Application Performance Monitoring</p>
+                <div class="session-tags">
+                    
+                    <span class="tag">ENGLISH</span>
+                    
+                    <span class="tag">INTERMEDIATE</span>
+                    
+                    <span class="tag">APM</span>
+                    
+                    <span class="tag">DEVELOPER</span>
+                    
+                </div>
+            </div>
+            
+        </div>
+
+        <script>
+            function openEmlFile() {
+                window.location.href = 'File.eml';  // Update with the correct path to your .eml file
+            }
+        </script>
+    </body>
+    </html>
+    

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        /* Navbar Styles */
+        .navbar {
+            background-color: #774aa4;
+            padding: 10px;
+            text-align: center;
+            margin: -20px;
+            height: 34px;
+        }
+        .navbar-item {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 21px;
+        }
+        .navbar-item:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+        .send-email-button {
+            background-color: green; /* Green button */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 0.9em;
+            margin-top: -5px; /* Adjust alignment */
+            float: right;
+        }
+        .sessions-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 56px;
+        }
+        .session-card {
+            background-color: #ffffff;
+            border: 1px solid #e2e2e2;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px;
+            width: 300px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+        .session-card:hover {
+            transform: scale(1.05);
+        }
+        .session-title {
+            font-size: 1.5em;
+            margin: 0;
+            color: #101010;
+        }
+        .session-description {
+            margin: 5px 0;
+            color: #19191a;
+        }
+        .session-tags {
+            margin-top: 10px;
+        }
+        .tag {
+            background-color: #e0e7ff;
+            border-radius: 5px;
+            padding: 5px;
+            margin-right: 5px;
+            display: inline-block;
+            font-size: 0.9em;
+            color: #774aa4;
+            margin-top: 10px;
+        }
+        .error {
+            color: red;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .h1 {
+            color: #774aa4;
+            text-align: center;
+        }
+        .intro-cards-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        .intro-card {
+            background-color: #c99bf6; /* Violet color */
+            border: 1px solid #e2e2e2;
+            border-radius: 8px;
+            padding: 5rem;
+            margin: 1.5rem;
+            width: 28rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+            cursor: pointer;
+            text-align: center;
+            color: black;
+        }
+        .intro-card:hover {
+            transform: scale(1.05); /* Hover effect */
+            background-color: #b834ec; /* Darker violet on hover */
+        }
+        .intro-card h3 {
+            font-size: 2.0em;
+            margin-bottom: 10px;
+        }
+        .intro-card p {
+            font-size: 1.3em;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <img src="image.png" alt="Logo" class="navbar-logo" />
+        <a href="#" class="navbar-item">Home</a>
+        <a href="#" class="navbar-item">Sessions</a>
+        <a href="https://www.datadoghq.com/about/leadership/" class="navbar-item">About</a>
+        <a href="#" class="navbar-item">Contact</a>
+        <button class="send-email-button" onclick="openEmlFile()">
+            Send Email
+        </button>
+    </nav>
+
+    <div class="intro-cards-container">
+        <div class="intro-card">
+            <h3>Foundation Enablement</h3>
+            <p>Sessions available on this platform.</p>
+        </div>
+        <div class="intro-card">
+            <h3>Training Sessions</h3>
+            <p>Planned on a monthly basis.</p>
+        </div>
+        <div class="intro-card">
+            <h3>View the Session Calendar</h3>
+            <p>Check out the available sessions and plan ahead.</p>
+        </div>
+        <div class="intro-card">
+            <h3>You Can Select:</h3>
+            <p>Topics, Level, Language</p>
+        </div>
+    </div>
+
+    <div id="sessions-container" class="sessions-container"></div>
+    <div id="error-message" class="error"></div>
+
+    <script>
+        // Function to open the .eml file
+        function openEmlFile() {
+            window.location.href = 'File.eml'; // Update with the correct path to your .eml file
+        }
+
+        // Fetch the session data from the JSON file
+        fetch('sessions.json')
+ // Ensure this path is correct
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error("Network response was not ok: " + response.statusText);
+                }
+                return response.json();
+            })
+            .then((data) => {
+                const sessionsContainer = document.getElementById("sessions-container");
+
+                // Create and append session cards
+                data.forEach((session) => {
+                    const sessionCard = document.createElement("div");
+                    sessionCard.className = "session-card";
+
+                    // Add click event to redirect to the registration link
+                    sessionCard.addEventListener("click", () => {
+                        window.location.href = session.registerLink; // Redirect to registration link
+                    });
+
+                    const sessionTitle = document.createElement("h2");
+                    sessionTitle.className = "session-title";
+                    sessionTitle.textContent = session.title;
+
+                    const sessionDescription = document.createElement("p");
+                    sessionDescription.className = "session-description";
+                    sessionDescription.textContent = session.description;
+
+                    const sessionTags = document.createElement("div");
+                    sessionTags.className = "session-tags";
+                    session.tags.forEach((tag) => {
+                        const tagElement = document.createElement("span");
+                        tagElement.className = "tag";
+                        tagElement.textContent = tag;
+                        sessionTags.appendChild(tagElement);
+                    });
+
+                    sessionCard.appendChild(sessionTitle);
+                    sessionCard.appendChild(sessionDescription);
+                    sessionCard.appendChild(sessionTags);
+                    sessionsContainer.appendChild(sessionCard);
+                });
+            })
+            .catch((error) => {
+                console.error("Error fetching session data:", error);
+                document.getElementById("error-message").textContent =
+                    "Failed to load session data. Please try again later.";
+            });
+    </script>
+</body>
+</html>
